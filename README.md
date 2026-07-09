@@ -10,9 +10,19 @@ A template to **test your IOL-AI 2026 competition script on Colab before submitt
 - **Your script** — your model + prompt + parsing. The part you experiment with and upload as `script.py`.
 - **Check** — look at the raw output and score it (only possible here, where the answers are known).
 
+## Reuse it for your own script
+
+Change three things, all in the **Your script** section:
+
+1. `MODEL_ID` → your model repo (or any model that fits the T4's 16 GB).
+2. `SYSTEM` → your prompt (the main lever).
+3. `parse_answers` → how you read the answers back (must match the format your prompt asks for).
+
+Then run, watch the output stream live, and check the score — iterate on the prompt until you're happy.
+
 ## From this notebook to a real submission
 
-Only three things change:
+Only three more things change:
 
 1. `MODEL_ID` points at `.` (weights ship inside the submission repo) instead of a Hub name.
 2. You read the platform's hidden test set at `/tmp/data/test.csv` instead of Linguini.
